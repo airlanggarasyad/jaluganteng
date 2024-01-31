@@ -1,15 +1,15 @@
-var express = require('express');
-var app = express();
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
 
-app.get('/', function (req, res) {
-    res.send('{ "response": "Hello From BFLP" }');
-});
+const express = require('express')
+const app = express()
+const port = process.env.PORT || 3000
 
-app.get('/will', function (req, res) {
-    res.send('{ "response": "Hello World" }');
-});
-app.get('/ready', function (req, res) {
-    res.send('{ "response": " Great!, It works!" }');
-});
-app.listen(process.env.PORT || 3000);
-module.exports = app;
+app.get('/', (req, res) => {
+  res.status(200).json({ message: "Hello BLFP" })
+})
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port} ${process.env.NODE_ENV} ${process.env.PORT}`)
+})
