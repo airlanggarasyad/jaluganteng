@@ -18,6 +18,10 @@ app.get('/jaluAuth', (req, res) => {
   res.status(200).json({ message: "Download jaluAuth on Apple App Store or Google Play Store" })
 })
 
+app.get('/promo', (req, res) => {
+  res.status(200).json({ message: "Promonya keren" })
+})
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port} ${process.env.NODE_ENV} ${process.env.PORT}`)
 })
