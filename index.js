@@ -19,7 +19,7 @@ app.get('/jaluAuth', (req, res) => {
 })
 
 app.get('/promo', (req, res) => {
-  res.status(200).json({ message: "Promonya keren" })
+  res.status(200).json({ message: "Promonya ga jadi keren" })
 })
 
 app.listen(port, () => {
